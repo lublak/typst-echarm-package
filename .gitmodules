@@ -1,0 +1,3 @@
+[submodule "typst-ctxjs-package"]
+	path = typst-ctxjs-package
+	url = https://github.com/lublak/typst-ctxjs-package

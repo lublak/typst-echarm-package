@@ -1,4 +1,4 @@
-#import "@preview/ctxjs:0.1.0"
+#import "@preview/ctxjs:0.1.1"
 
 #let echarts-bytecode = read("echarts.kbc1", encoding: none)
 #let echart-helper = read("echarts_helper.js", encoding: none)

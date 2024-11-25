@@ -1,0 +1,13 @@
+{
+  "name": "echarm_helper",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "type": "module",
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  },
+  "dependencies": {
+    "echarts": "^5.5.1"
+  }
+}

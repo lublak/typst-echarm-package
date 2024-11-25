@@ -1,13 +1,10 @@
-#import "@preview/ctxjs:0.1.0"
+#import "@preview/ctxjs:0.1.1"
 
-#let echarts-bytecode = read("echarts.kbc1", encoding: none)
-#let echart-helper = read("echarts_helper.js", encoding: none)
+#let echarm-bytecode = read("echarm.kbc1", encoding: none)
 
 #{
   _ = ctxjs.create-context("@preview/echarm")
-  _ = ctxjs.eval("@preview/echarm", "function setTimeout(functionRef, delay, ...args) { if(!delay) {functionRef();} }")
-  _ = ctxjs.load-module-bytecode("@preview/echarm", echarts-bytecode)
-  _ = ctxjs.load-module-js("@preview/echarm", "echarts_helper", echart-helper)
+  _ = ctxjs.load-module-bytecode("@preview/echarm", echarm-bytecode)
 }
 
 #let render(width: auto, height: auto, zoom: 1, options: (:)) = {
@@ -30,7 +27,7 @@
     image.decode(
       ctxjs.call-module-function(
         "@preview/echarm",
-        "echarts_helper",
+        "echarm",
         "render",
         (
           calc_width / zoom,

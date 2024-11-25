@@ -1,7 +1,9 @@
 cp README.md typst-package/
 cp LICENSE typst-package/
-cp echarts_helper.js typst-package/
-cargo run --manifest-path typst-ctxjs-package/Cargo.toml --bin ctxjs_module_bytecode_builder echarts echarts.esm.min.js typst-package/echarts.kbc1
+
+npm --prefix js run build
+
+cargo run --manifest-path typst-ctxjs-package/Cargo.toml --bin ctxjs_module_bytecode_builder echarm js/dist/echarm.js typst-package/echarm.kbc1
 examples="examples/*.typ"
 for f in $examples
 do

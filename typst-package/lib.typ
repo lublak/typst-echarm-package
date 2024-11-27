@@ -1,4 +1,4 @@
-#import "@preview/ctxjs:0.1.1"
+#import "@preview/ctxjs:0.2.0"
 
 #let echarm-bytecode = read("echarm.kbc1", encoding: none)
 
@@ -6,6 +6,8 @@
   _ = ctxjs.create-context("@preview/echarm")
   _ = ctxjs.load-module-bytecode("@preview/echarm", echarm-bytecode)
 }
+
+#let eval-later = ctxjs.eval-later
 
 #let render(width: auto, height: auto, zoom: 1, options: (:)) = {
   layout(size => {

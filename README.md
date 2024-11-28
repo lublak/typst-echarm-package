@@ -60,4 +60,4 @@ https://typst.app/universe/package/ctxjs/
 | 0.1.0   | 5.5.1              |
 | 0.1.1   | 5.5.1<sup>1</sup> |
 
-<sup>1</sup> smaller bundle size & new eval-later feature
+<sup>1</sup> new eval-later feature

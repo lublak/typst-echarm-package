@@ -7,7 +7,7 @@
   _ = ctxjs.load-module-bytecode("@preview/echarm", echarm-bytecode)
 }
 
-#let eval-later = ctxjs.eval-later
+#let eval-later(js) = ctxjs.eval-later("@preview/echarm", js)
 
 #let render(width: auto, height: auto, zoom: 1, options: (:)) = {
   layout(size => {

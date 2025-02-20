@@ -1,13 +1,14 @@
-#import "@preview/ctxjs:0.2.0"
+#import "@preview/ctxjs:0.3.0"
 
 #let echarm-bytecode = read("echarm.kbc1", encoding: none)
 
-#{
-  _ = ctxjs.create-context("@preview/echarm")
-  _ = ctxjs.load-module-bytecode("@preview/echarm", echarm-bytecode)
-}
+#let echarm-js-module = ctxjs.new-context(
+  load: (
+    ctxjs.load.load-module-bytecode(echarm-bytecode)
+  )
+)
 
-#let eval-later(js) = ctxjs.eval-later("@preview/echarm", js)
+#let eval-later(js) = ctxjs.ctx.eval-later(js)
 
 #let render(width: auto, height: auto, zoom: 1, options: (:)) = {
   layout(size => {
@@ -27,8 +28,8 @@
     calc_width = (calc_width).pt()
 
     image.decode(
-      ctxjs.call-module-function(
-        "@preview/echarm",
+      ctxjs.ctx.call-module-function(
+        echarm-js-module,
         "echarm",
         "render",
         (

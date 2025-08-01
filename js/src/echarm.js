@@ -7,6 +7,7 @@ import {
     BoxplotChart,
     CandlestickChart,
     //CustomChart,
+    ChordChart,
     EffectScatterChart,
     FunnelChart,
     GaugeChart,
@@ -24,7 +25,7 @@ import {
     SunburstChart,
     ThemeRiverChart,
     TreeChart,
-    TreemapChart
+    TreemapChart,
 } from 'echarts/charts';
 
 import {
@@ -46,10 +47,12 @@ import {
     MarkAreaComponent,
     MarkLineComponent,
     MarkPointComponent,
+    MatrixComponent,
     ParallelComponent,
     PolarComponent,
     RadarComponent,
     SingleAxisComponent,
+    ThumbnailComponent,
     TimelineComponent,
     TitleComponent,
     //ToolboxComponent,
@@ -57,12 +60,15 @@ import {
     TransformComponent,
     VisualMapComponent,
     VisualMapContinuousComponent,
-    VisualMapPiecewiseComponent
+    VisualMapPiecewiseComponent,
 } from 'echarts/components';
 
 import {
+    AxisBreak,
     LabelLayout,
-    // UniversalTransition
+    LegacyGridContainLabel,
+    ScatterJitter,
+    // UniversalTransition,
 } from 'echarts/features';
 
 echarts.use([
@@ -72,6 +78,7 @@ echarts.use([
     BoxplotChart,
     CandlestickChart,
     //CustomChart,
+    ChordChart,
     EffectScatterChart,
     FunnelChart,
     GaugeChart,
@@ -122,8 +129,11 @@ echarts.use([
     VisualMapContinuousComponent,
     VisualMapPiecewiseComponent,
 
+    AxisBreak,
     LabelLayout,
-    // UniversalTransition
+    LegacyGridContainLabel,
+    ScatterJitter,
+    // UniversalTransition,
 ]);
 
 // workaround for quickjs

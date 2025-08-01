@@ -39,7 +39,7 @@ https://echarts.apache.org/en/option.html
 ## Usage
 
 ```typst
-#import "@preview/echarm:0.2.1"
+#import "@preview/echarm:0.3.0"
 
 // options are echart options
 #echarm.render(width: 100%, height: 100%, options: (:))
@@ -61,6 +61,7 @@ https://typst.app/universe/package/ctxjs/
 | 0.1.1   | 5.5.1<sup>1</sup>  |
 | 0.2.0   | 5.6.0              |
 | 0.2.1   | 5.6.0<sup>2</sup>  |
+| 0.3.0   | 6.0.0              |
 
-<sup>1</sup> new eval-later feature
+<sup>1</sup> new eval-later feature\
 <sup>2</sup> compatibility with typst 0.13 using ctxjs 0.3.0

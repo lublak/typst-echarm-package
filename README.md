@@ -45,6 +45,23 @@ https://echarts.apache.org/en/option.html
 #echarm.render(width: 100%, height: 100%, options: (:))
 ```
 
+
+### Inject a javascript callback
+
+To use a echart callback, you can use the `eval-later` function:
+
+```typst
+#import "@preview/echarm:0.3.0"
+
+// options are echart options
+#echarm.render(width: 100%, height: 100%, options: (
+  series: (
+    labelLayout: echarm.eval-later("your javascript callback code")
+  )
+))
+```
+
+
 ## Infos
 The version is not the same as the echart version, so that I can update independently.
 Animations are not supported here!

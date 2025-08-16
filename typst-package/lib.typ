@@ -5,12 +5,12 @@
 #let echarm-js-module = ctxjs.new-context(
   load: (
     ctxjs.load.load-module-bytecode(echarm-bytecode),
-  )
+  ),
 )
 
 #let eval-later(js) = ctxjs.ctx.eval-later(js)
 
-#let render(width: auto, height: auto, zoom: 1, options: (:)) = {
+#let render(width: auto, height: auto, zoom: 1, alt: none, options: (:)) = {
   layout(size => {
     let calc_height = height
     let calc_width = width
@@ -37,13 +37,14 @@
             calc_width / zoom,
             calc_height / zoom,
             options,
-          )
+          ),
         ),
       ),
       width: width,
       height: height,
       format: "svg",
-      fit: "cover"
+      fit: "cover",
+      alt: alt,
     )
   })
 }

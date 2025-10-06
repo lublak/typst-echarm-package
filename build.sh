@@ -1,6 +1,7 @@
 cp README.md typst-package/
 cp LICENSE typst-package/
 
+npm --prefix js install
 npm --prefix js run build
 
 cargo run --manifest-path typst-ctxjs-package/Cargo.toml --bin ctxjs_module_bytecode_builder echarm js/dist/echarm.js typst-package/echarm.kbc1

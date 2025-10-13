@@ -1,4 +1,4 @@
-#import "@preview/ctxjs:0.3.1"
+#import "@preview/ctxjs:0.3.2"
 
 #let echarm-bytecode = read("echarm.kbc1", encoding: none)
 
@@ -9,6 +9,8 @@
 )
 
 #let eval-later(js) = ctxjs.ctx.eval-later(js)
+
+#let image-data-url(data) = ctxjs.image-data-url(data)
 
 #let render(width: auto, height: auto, zoom: 1, alt: none, options: (:)) = {
   layout(size => {

@@ -145,8 +145,22 @@ globalThis.setTimeout = function (functionRef, delay, ...args) {
     }
 }
 
-function render(width, height, options) {
-    let chart = echarts.init(null, null, {
+function render(width, height, options, theme) {
+    let themeParam = null;
+
+    if (theme !== undefined && theme !== null) {
+        // allow the use of built-in themes (string)
+        if (typeof theme === 'string') {
+            themeParam = theme;
+        } else if (typeof theme === 'object') {
+            // register custom themes using unique name
+            const themeName = '_theme_' + Date.now() + Math.random().toString(36).slice(2);
+            echarts.registerTheme(themeName, theme);
+            themeParam = themeName;
+        }
+    }
+
+    let chart = echarts.init(null, themeParam, {
         renderer: 'svg',
         ssr: true,
         width: width,

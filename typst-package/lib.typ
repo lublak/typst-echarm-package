@@ -12,7 +12,7 @@
 
 #let image-data-url(data) = ctxjs.image-data-url(data)
 
-#let render(width: auto, height: auto, zoom: 1, alt: none, options: (:)) = {
+#let render(width: auto, height: auto, zoom: 1, alt: none, options: (:), theme: none) = {
   layout(size => {
     let calc_height = height
     let calc_width = width
@@ -39,6 +39,7 @@
             calc_width / zoom,
             calc_height / zoom,
             options,
+            theme,
           ),
         ),
       ),

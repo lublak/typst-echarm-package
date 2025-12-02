@@ -149,14 +149,12 @@ function render(width, height, options, theme) {
     let themeParam = null;
 
     if (theme !== undefined && theme !== null) {
-        // allow the use of built-in themes (string)
+        // either use built-in themes (string) or custom (object)
         if (typeof theme === 'string') {
             themeParam = theme;
         } else if (typeof theme === 'object') {
-            // register custom themes using unique name
-            const themeName = '_theme_' + Date.now() + Math.random().toString(36).slice(2);
-            echarts.registerTheme(themeName, theme);
-            themeParam = themeName;
+            echarts.registerTheme("__internal__", theme);
+            themeParam = "__internal__";
         }
     }
 

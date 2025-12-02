@@ -62,6 +62,21 @@ To use a echart callback, you can use the `eval-later` function:
 ```
 
 
+### Apply Themes
+
+To use a theme specify in the `theme` parameter:
+
+```typst
+  #echarm.render(theme: "dark", options: (...))
+```
+
+Themes that are created using the [Theme Builder](https://echarts.apache.org/en/theme-builder.html) can be read using [`json()`](https://typst.app/docs/reference/data-loading/json/), for example:
+
+```typst
+  #echarm.render(theme: json("./custom-theme.json"), options: (...))
+```
+
+```
 ## Infos
 The version is not the same as the echart version, so that I can update independently.
 Animations are not supported here!

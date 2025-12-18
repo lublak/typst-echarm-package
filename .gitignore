@@ -22,3 +22,7 @@ Cargo.lock
 
 
 js/node_modules/
+js/dist
+
+*.kbc1
+typst-package/**/*.png

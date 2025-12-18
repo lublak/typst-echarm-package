@@ -62,6 +62,20 @@ To use a echart callback, you can use the `eval-later` function:
 ```
 
 
+### Apply Themes
+
+To use a theme, specify it in the `theme` parameter:
+
+```typst
+  #echarm.render(theme: "dark", options: (...))
+```
+
+Themes that are created using the [Theme Builder](https://echarts.apache.org/en/theme-builder.html) can be read using [`json()`](https://typst.app/docs/reference/data-loading/json/), for example:
+
+```typst
+  #echarm.render(theme: json("./custom-theme.json"), options: (...))
+```
+
 ## Infos
 The version is not the same as the echart version, so that I can update independently.
 Animations are not supported here!
@@ -84,3 +98,4 @@ https://typst.app/universe/package/ctxjs/
 <sup>1</sup> new eval-later feature\
 <sup>2</sup> compatibility with typst 0.13 using ctxjs 0.3.0
 <sup>3</sup> added a tool to encode an image into an image data url using ctxjs 0.3.2
+

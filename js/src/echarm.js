@@ -145,8 +145,20 @@ globalThis.setTimeout = function (functionRef, delay, ...args) {
     }
 }
 
-function render(width, height, options) {
-    let chart = echarts.init(null, null, {
+function render(width, height, options, theme) {
+    let themeParam = null;
+
+    if (theme !== undefined && theme !== null) {
+        // either use built-in themes (string) or custom (object)
+        if (typeof theme === 'string') {
+            themeParam = theme;
+        } else if (typeof theme === 'object') {
+            echarts.registerTheme("__internal__", theme);
+            themeParam = "__internal__";
+        }
+    }
+
+    let chart = echarts.init(null, themeParam, {
         renderer: 'svg',
         ssr: true,
         width: width,

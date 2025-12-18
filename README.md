@@ -97,5 +97,5 @@ https://typst.app/universe/package/ctxjs/
 
 <sup>1</sup> new eval-later feature\
 <sup>2</sup> compatibility with typst 0.13 using ctxjs 0.3.0
-
 <sup>3</sup> added a tool to encode an image into an image data url using ctxjs 0.3.2
+

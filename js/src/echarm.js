@@ -5,13 +5,7 @@ echarts.use(Object.values(extensions));
 
 import './languages'
 import './themes'
-
-// workaround for quickjs
-globalThis.setTimeout = function (functionRef, delay, ..._) {
-    if (!delay) {
-        functionRef();
-    }
-}
+import './fix_set_timeout'
 
 function render(width, height, options, theme, locale) {
     let chart = echarts.init(null, theme, {

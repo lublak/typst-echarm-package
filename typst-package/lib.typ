@@ -1,6 +1,5 @@
-#import "@preview/ctxjs:0.4.1"
 #import "internal.typ" as _internal
-#import ctxjs.value as value
+#import _internal.ctxjs.value as value
 #import "theme.typ" as theme
 #import "language.typ" as language
 
@@ -22,7 +21,7 @@
     calc_width = (calc_width).pt()
 
     let current-context = _internal.ctxjs-context
-    let (current-context, value) = ctxjs.ctx.call-module-function(
+    let (current-context, value) = _internal.ctxjs.ctx.call-module-function(
       current-context,
       "echarm",
       "render",

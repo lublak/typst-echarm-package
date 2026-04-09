@@ -1,5 +1,5 @@
 #set page(width: 200mm, height: 150mm, margin: 0mm)
-#import "../typst-package/lib.typ" as echarm
+#import "../lib.typ" as echarm
 #echarm.render(width: 100%, height: 100%, options: (
   xAxis: (:),
   yAxis: (:),
@@ -29,8 +29,8 @@
         (12.0, 6.26),
         (12.0, 8.84),
         (7.08, 5.82),
-        (5.02, 5.68)
-      )
+        (5.02, 5.68),
+      ),
     )
-  )
+  ),
 ))

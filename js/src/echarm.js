@@ -1,156 +1,25 @@
 import * as echarts from 'echarts/core';
+import * as extensions from './extensions';
 
-import { SVGRenderer } from 'echarts/renderers';
+echarts.use(Object.values(extensions));
 
-import {
-    BarChart,
-    BoxplotChart,
-    CandlestickChart,
-    //CustomChart,
-    ChordChart,
-    EffectScatterChart,
-    FunnelChart,
-    GaugeChart,
-    GraphChart,
-    HeatmapChart,
-    LineChart,
-    LinesChart,
-    MapChart,
-    ParallelChart,
-    PictorialBarChart,
-    PieChart,
-    RadarChart,
-    SankeyChart,
-    ScatterChart,
-    SunburstChart,
-    ThemeRiverChart,
-    TreeChart,
-    TreemapChart,
-} from 'echarts/charts';
-
-import {
-    //AriaComponent,
-    //AxisPointerComponent,
-    //BrushComponent,
-    CalendarComponent,
-    //DataZoomComponent,
-    //DataZoomInsideComponent,
-    //DataZoomSliderComponent,
-    DatasetComponent,
-    GeoComponent,
-    GraphicComponent,
-    GridComponent,
-    GridSimpleComponent,
-    LegendComponent,
-    LegendPlainComponent,
-    //LegendScrollComponent,
-    MarkAreaComponent,
-    MarkLineComponent,
-    MarkPointComponent,
-    MatrixComponent,
-    ParallelComponent,
-    PolarComponent,
-    RadarComponent,
-    SingleAxisComponent,
-    ThumbnailComponent,
-    TimelineComponent,
-    TitleComponent,
-    //ToolboxComponent,
-    //TooltipComponent,
-    TransformComponent,
-    VisualMapComponent,
-    VisualMapContinuousComponent,
-    VisualMapPiecewiseComponent,
-} from 'echarts/components';
-
-import {
-    AxisBreak,
-    LabelLayout,
-    LegacyGridContainLabel,
-    ScatterJitter,
-    // UniversalTransition,
-} from 'echarts/features';
-
-echarts.use([
-    SVGRenderer,
-
-    BarChart,
-    BoxplotChart,
-    CandlestickChart,
-    //CustomChart,
-    ChordChart,
-    EffectScatterChart,
-    FunnelChart,
-    GaugeChart,
-    GraphChart,
-    HeatmapChart,
-    LineChart,
-    LinesChart,
-    MapChart,
-    ParallelChart,
-    PictorialBarChart,
-    PieChart,
-    RadarChart,
-    SankeyChart,
-    ScatterChart,
-    SunburstChart,
-    ThemeRiverChart,
-    TreeChart,
-    TreemapChart,
-
-    //AriaComponent,
-    //AxisPointerComponent,
-    //BrushComponent,
-    CalendarComponent,
-    //DataZoomComponent,
-    //DataZoomInsideComponent,
-    //DataZoomSliderComponent,
-    DatasetComponent,
-    GeoComponent,
-    GraphicComponent,
-    GridComponent,
-    GridSimpleComponent,
-    LegendComponent,
-    LegendPlainComponent,
-    //LegendScrollComponent,
-    MarkAreaComponent,
-    MarkLineComponent,
-    MarkPointComponent,
-    MatrixComponent,
-    ParallelComponent,
-    PolarComponent,
-    RadarComponent,
-    SingleAxisComponent,
-    ThumbnailComponent,
-    TimelineComponent,
-    TitleComponent,
-    //ToolboxComponent,
-    //TooltipComponent,
-    TransformComponent,
-    VisualMapComponent,
-    VisualMapContinuousComponent,
-    VisualMapPiecewiseComponent,
-
-    AxisBreak,
-    LabelLayout,
-    LegacyGridContainLabel,
-    ScatterJitter,
-    // UniversalTransition,
-]);
+import './languages'
+import './themes'
 
 // workaround for quickjs
-globalThis.setTimeout = function (functionRef, delay, ...args) {
+globalThis.setTimeout = function (functionRef, delay, ..._) {
     if (!delay) {
         functionRef();
     }
 }
 
-function render(width, height, options) {
-    let chart = echarts.init(null, null, {
+function render(width, height, options, theme, locale) {
+    let chart = echarts.init(null, theme, {
         renderer: 'svg',
         ssr: true,
         width: width,
         height: height,
+        locale: locale ?? 'EN'
     });
     chart.setOption(Object.assign({}, options, { animation: false }));
     const svg = chart.renderToSVGString();

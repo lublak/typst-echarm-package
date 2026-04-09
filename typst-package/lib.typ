@@ -1,18 +1,10 @@
-#import "@preview/ctxjs:0.3.2"
+#import "@preview/ctxjs:0.4.1"
+#import "internal.typ" as _internal
+#import ctxjs.value as value
+#import "theme.typ" as theme
+#import "language.typ" as language
 
-#let echarm-bytecode = read("echarm.kbc1", encoding: none)
-
-#let echarm-js-module = ctxjs.new-context(
-  load: (
-    ctxjs.load.load-module-bytecode(echarm-bytecode),
-  ),
-)
-
-#let eval-later(js) = ctxjs.ctx.eval-later(js)
-
-#let image-data-url(data) = ctxjs.image-data-url(data)
-
-#let render(width: auto, height: auto, zoom: 1, alt: none, options: (:)) = {
+#let render(width: auto, height: auto, zoom: 1.0, alt: none, options: (:), theme: none, language: none) = {
   layout(size => {
     let calc_height = height
     let calc_width = width
@@ -29,19 +21,20 @@
     calc_height = (calc_height).pt()
     calc_width = (calc_width).pt()
 
+    let current-context = _internal.ctxjs-context
+    let (current-context, value) = ctxjs.ctx.call-module-function(
+      current-context,
+      "echarm",
+      "render",
+      calc_width / zoom,
+      calc_height / zoom,
+      options,
+      theme,
+      language,
+    )
+
     image(
-      bytes(
-        ctxjs.ctx.call-module-function(
-          echarm-js-module,
-          "echarm",
-          "render",
-          (
-            calc_width / zoom,
-            calc_height / zoom,
-            options,
-          ),
-        ),
-      ),
+      bytes(value),
       width: width,
       height: height,
       format: "svg",

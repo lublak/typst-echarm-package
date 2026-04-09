@@ -1,9 +1,9 @@
 #set page(width: 200mm, height: 150mm, margin: 0mm)
-#import "../typst-package/lib.typ" as echarm
+#import "../lib.typ" as echarm
 #echarm.render(width: 100%, height: 100%, options: (
   legend: (
     top: "5%",
-    left: "center"
+    left: "center",
   ),
   series: (
     name: "Access Form",
@@ -27,6 +27,6 @@
       (value: 580, name: "Email"),
       (value: 484, name: "Union Ads"),
       (value: 300, name: "Video Ads"),
-    )
+    ),
   ),
 ))

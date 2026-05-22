@@ -5,9 +5,9 @@
   },
   "type": "module",
   "devDependencies": {
-    "esbuild": "0.25.10"
+    "esbuild": "0.28.0"
   },
   "dependencies": {
-    "echarts": "6.0.0"
+    "echarts": "6.1.0"
   }
 }

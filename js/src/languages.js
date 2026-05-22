@@ -11,6 +11,7 @@ import 'echarts/i18n/langHU.js';
 import 'echarts/i18n/langIT.js';
 import 'echarts/i18n/langJA.js';
 import 'echarts/i18n/langKO.js';
+import 'echarts/i18n/langLV.js';
 import 'echarts/i18n/langnb-NO.js';
 import 'echarts/i18n/langNL.js';
 import 'echarts/i18n/langPL.js';

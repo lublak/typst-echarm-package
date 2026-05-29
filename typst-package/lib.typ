@@ -11,11 +11,15 @@
       calc_height = size.height * calc_height
     } else if type(calc_height) == relative {
       calc_height = size.height * calc_height.ratio + calc_height.length
+    } else if calc_height == auto {
+      calc_height = size.height
     }
     if type(calc_width) == ratio {
       calc_width = size.width * calc_width
     } else if type(calc_width) == relative {
       calc_width = size.width * calc_width.ratio + calc_width.length
+    } else if calc_width == auto {
+      calc_width = size.width
     }
     calc_height = (calc_height).pt()
     calc_width = (calc_width).pt()

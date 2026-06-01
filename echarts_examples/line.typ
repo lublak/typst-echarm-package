@@ -1,0 +1,26 @@
+#import "example.typ": *
+
+#examples((
+  "line-simple",
+  "line-smooth",
+  "area-basic",
+  "line-stack",
+  "area-stack",
+  "area-stack-gradient",
+  "bump-chart",
+  "line-marker",
+  "area-pieces",
+  "line-gradient",
+  "line-sections",
+  "grid-multiple",
+  "area-rainfall",
+  "line-function",
+  "line-markline",
+  "line-style",
+  "line-in-cartesian-coordinate-system",
+  "line-log",
+  "line-step",
+  "line-y-category",
+  "line-graphic",
+  "line-polar",
+))

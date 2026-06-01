@@ -1,4 +1,4 @@
-#import "@preview/ctxjs:0.4.1"
+#import "@preview/ctxjs:0.5.0"
 
 #let ctxjs-context = ctxjs.new-context(
   ctxjs.load.load-module-bytecode(

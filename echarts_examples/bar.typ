@@ -1,0 +1,27 @@
+#import "example.typ": *
+
+#examples((
+  "bar-simple",
+  "bar-tick-align",
+  "bar-background",
+  "bar-data-color",
+  "bar-negative2",
+  "bar-polar-label-radial",
+  "bar-polar-label-tangential",
+  "bar-y-category",
+  "polar-endAngle",
+  "bar-stack",
+  "bar-stack-borderRadius",
+  "bar-y-category-stack",
+  "bar-negative",
+  "bar1",
+  "multiple-y-axis",
+  "bar-polar-stack",
+  "bar-polar-stack-radial",
+  "polar-roundCap",
+  "data-transform-sort-bar",
+  "dataset-encode0",
+  "dataset-series-layout-by",
+  "dataset-simple0",
+  "dataset-simple1",
+))

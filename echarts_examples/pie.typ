@@ -12,5 +12,4 @@
   "pie-nest",
   "data-transform-multiple-pie",
   "dataset-default",
-  "calendar-pie",
 ))

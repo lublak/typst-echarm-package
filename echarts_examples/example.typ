@@ -46,7 +46,7 @@
       current-context,
       bytes(code),
     )
-    stack(dir: ttb, echarm.render(width: 100%, height: 50%, options: options), [#options])
+    stack(dir: ttb, echarm.render(width: 100%, height: 50%, zoom: 0.5, options: options), [#options])
     pagebreak(weak: true)
   }
 }

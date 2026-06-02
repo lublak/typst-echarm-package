@@ -8,7 +8,5 @@ cargo run --manifest-path typst-ctxjs-package/Cargo.toml --bin ctxjs_module_byte
 examples="typst-package/examples/*.typ"
 for f in $examples
 do
-    filename=$(basename -- "$f")
-    filename="${filename%.*}"
-    typst compile --root typst-package $f "examples/$filename.png"
+    typst compile --root typst-package $f "${f%.*}.png"
 done
